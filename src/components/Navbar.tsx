@@ -31,6 +31,7 @@ const Navbar = () => {
     { name: 'TRAINERS', path: '/trainers' },
     { name: 'TIMETABLE', path: '/timetable' },
     { name: 'GALLERY', path: '/gallery' },
+    { name: 'BLOG', path: '/blog' },
     { name: 'SHOP', path: '/shop' },
     { name: 'CONTACT', path: '/contact' },
   ];
