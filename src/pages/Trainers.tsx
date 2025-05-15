@@ -18,6 +18,7 @@ const Trainers = () => {
       specialty: "Strength & Conditioning",
       experience: "7+ years",
       bio: "Amitee specializes in transformative strength training programs tailored to individual goals and abilities.",
+      image: "https://images.unsplash.com/photo-1604480133435-25b86862d276?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80",
       social: {
         instagram: "#",
         twitter: "#"
@@ -29,6 +30,7 @@ const Trainers = () => {
       specialty: "CrossFit & Functional Training",
       experience: "8+ years",
       bio: "With extensive experience in CrossFit competitions, Liam helps members push their limits safely.",
+      image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
       social: {
         instagram: "#",
         twitter: "#"
@@ -40,6 +42,7 @@ const Trainers = () => {
       specialty: "Olympic Weightlifting",
       experience: "10+ years",
       bio: "Mark is an expert in Olympic lifts and advanced CrossFit techniques for athletes of all levels.",
+      image: "https://images.unsplash.com/photo-1594381898411-846e7d193883?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
       social: {
         instagram: "#",
         twitter: "#"
@@ -51,6 +54,7 @@ const Trainers = () => {
       specialty: "Hypertrophy & Nutrition",
       experience: "12+ years",
       bio: "A champion bodybuilder, Ron guides members through effective muscle building programs.",
+      image: "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
       social: {
         instagram: "#",
         twitter: "#"
@@ -62,6 +66,7 @@ const Trainers = () => {
       specialty: "Vinyasa & Power Yoga",
       experience: "6+ years",
       bio: "Sarah combines traditional yoga practices with modern fitness approaches for mind-body wellness.",
+      image: "https://images.unsplash.com/photo-1518611012118-696072aa579a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
       social: {
         instagram: "#",
         twitter: "#"
@@ -73,6 +78,7 @@ const Trainers = () => {
       specialty: "Sports Nutrition & Meal Planning",
       experience: "9+ years",
       bio: "Michael provides evidence-based nutrition advice to complement your fitness journey.",
+      image: "https://images.unsplash.com/photo-1584466977773-e625c37cdd50?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
       social: {
         instagram: "#",
         twitter: "#"
@@ -111,9 +117,11 @@ const Trainers = () => {
               >
                 <Card className="bg-gym-dark border-gray-700 text-white overflow-hidden hover:border-gym-yellow transition-colors duration-300">
                   <div className="relative h-80">
-                    <div className="w-full h-full bg-gray-800 flex items-center justify-center">
-                      <span className="text-gray-500">Trainer Image</span>
-                    </div>
+                    <img 
+                      src={trainer.image} 
+                      alt={trainer.name}
+                      className="w-full h-full object-cover"
+                    />
                     <div className="absolute inset-0 bg-black bg-opacity-20 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                       <div className="flex space-x-4">
                         <a href={trainer.social.instagram} className="text-white bg-gym-yellow h-10 w-10 rounded-full flex items-center justify-center hover:bg-yellow-400 transition-colors">
