@@ -20,7 +20,7 @@ const Shop = () => {
       price: 29.99, 
       category: 'apparel',
       rating: 4.8,
-      image: '/tshirt.jpg' 
+      image: 'https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80' 
     },
     { 
       id: 2, 
@@ -28,7 +28,7 @@ const Shop = () => {
       price: 49.99, 
       category: 'supplements',
       rating: 4.9,
-      image: '/protein.jpg' 
+      image: 'https://images.unsplash.com/photo-1579722821273-0f6c1edd4933?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80' 
     },
     { 
       id: 3, 
@@ -36,7 +36,7 @@ const Shop = () => {
       price: 19.99, 
       category: 'accessories',
       rating: 4.7,
-      image: '/bottle.jpg' 
+      image: 'https://images.unsplash.com/photo-1605987743673-89aa11ad9388?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80' 
     },
     { 
       id: 4, 
@@ -44,7 +44,7 @@ const Shop = () => {
       price: 34.99, 
       category: 'apparel',
       rating: 4.6,
-      image: '/shorts.jpg' 
+      image: 'https://images.unsplash.com/photo-1562886877-77045044f840?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80' 
     },
     { 
       id: 5, 
@@ -52,7 +52,7 @@ const Shop = () => {
       price: 39.99, 
       category: 'supplements',
       rating: 4.5,
-      image: '/bcaa.jpg' 
+      image: 'https://images.unsplash.com/photo-1610725664285-7c57e6eeac3f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80' 
     },
     { 
       id: 6, 
@@ -60,7 +60,7 @@ const Shop = () => {
       price: 24.99, 
       category: 'accessories',
       rating: 4.8,
-      image: '/bands.jpg' 
+      image: 'https://images.unsplash.com/photo-1598971861713-54ad16a7e72e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80' 
     },
     { 
       id: 7, 
@@ -68,7 +68,7 @@ const Shop = () => {
       price: 54.99, 
       category: 'accessories',
       rating: 4.7,
-      image: '/bag.jpg' 
+      image: 'https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80' 
     },
     { 
       id: 8, 
@@ -76,7 +76,7 @@ const Shop = () => {
       price: 44.99, 
       category: 'apparel',
       rating: 4.9,
-      image: '/leggings.jpg' 
+      image: 'https://images.unsplash.com/photo-1506629082955-511b1aa562c8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80' 
     },
   ];
 
@@ -140,9 +140,11 @@ const Shop = () => {
               >
                 <Card className="bg-gym-dark border-gray-700 text-white overflow-hidden hover:border-gym-yellow transition-colors duration-300">
                   <div className="relative h-64">
-                    <div className="w-full h-full bg-gray-800 flex items-center justify-center">
-                      <span className="text-gray-500">Product Image</span>
-                    </div>
+                    <img 
+                      src={product.image} 
+                      alt={product.name}
+                      className="w-full h-full object-cover"
+                    />
                     <div className="absolute top-4 right-4 bg-gym-yellow text-black text-xs font-bold px-2 py-1 rounded">
                       NEW
                     </div>
