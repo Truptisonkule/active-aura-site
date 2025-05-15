@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { motion } from 'framer-motion';
+import AnimatedCounter from '../components/AnimatedCounter';
 
 const About = () => {
   useEffect(() => {
@@ -42,14 +43,14 @@ const About = () => {
               transition={{ duration: 0.6 }}
               className="relative"
             >
-              <div className="aspect-[4/3] rounded-lg overflow-hidden">
+              <div className="aspect-[4/3] rounded-lg overflow-hidden shadow-2xl">
                 <img 
                   src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" 
                   alt="Gym Interior" 
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="hidden lg:block absolute -bottom-6 -right-6 bg-gym-yellow p-6 rounded-lg">
+              <div className="hidden lg:block absolute -bottom-6 -right-6 bg-gym-yellow p-6 rounded-lg transform hover:scale-105 transition-transform">
                 <p className="text-black text-xl font-bold">10+ Years<br />Experience</p>
               </div>
             </motion.div>
@@ -73,19 +74,19 @@ const About = () => {
               </p>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
                 <div className="text-center">
-                  <p className="text-4xl font-bold text-gym-yellow mb-1">5K+</p>
+                  <AnimatedCounter end={5000} duration={2000} suffix="+" className="mb-1" />
                   <p className="text-sm text-gray-400">Happy Members</p>
                 </div>
                 <div className="text-center">
-                  <p className="text-4xl font-bold text-gym-yellow mb-1">40+</p>
+                  <AnimatedCounter end={40} duration={1500} suffix="+" className="mb-1" />
                   <p className="text-sm text-gray-400">Expert Trainers</p>
                 </div>
                 <div className="text-center">
-                  <p className="text-4xl font-bold text-gym-yellow mb-1">25+</p>
+                  <AnimatedCounter end={25} duration={1500} suffix="+" className="mb-1" />
                   <p className="text-sm text-gray-400">Fitness Programs</p>
                 </div>
                 <div className="text-center">
-                  <p className="text-4xl font-bold text-gym-yellow mb-1">3</p>
+                  <AnimatedCounter end={3} duration={1000} className="mb-1" />
                   <p className="text-sm text-gray-400">Locations</p>
                 </div>
               </div>
@@ -118,16 +119,20 @@ const About = () => {
                   description: "We continuously evolve our methods based on the latest fitness research."
                 }
               ].map((value, index) => (
-                <div 
-                  key={index} 
-                  className="bg-gym-dark p-6 rounded-lg border border-gray-700 hover:border-gym-yellow transition-colors duration-300"
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-gym-dark p-6 rounded-lg border border-gray-700 hover:border-gym-yellow transition-all duration-300 transform hover:-translate-y-2"
                 >
                   <div className="w-12 h-12 bg-black/30 rounded-full flex items-center justify-center mb-4 border border-gym-yellow text-gym-yellow">
                     {index + 1}
                   </div>
                   <h4 className="text-xl font-bold mb-2">{value.title}</h4>
                   <p className="text-gray-400">{value.description}</p>
-                </div>
+                </motion.div>
               ))}
             </div>
           </motion.div>
@@ -137,18 +142,18 @@ const About = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <div className="bg-gym-dark p-10 rounded-lg">
+            <div className="bg-gym-dark p-10 rounded-lg shadow-2xl bg-gradient-to-br from-gym-dark to-black">
               <div className="text-center mb-8">
                 <h3 className="text-2xl font-bold mb-2">Ready to Start Your Fitness Journey?</h3>
                 <p className="text-gray-400">Join our community and let us help you achieve your fitness goals.</p>
               </div>
-              <div className="flex justify-center">
-                <button className="bg-gym-yellow text-black px-8 py-3 rounded font-bold hover:bg-yellow-400 mr-4 transition-colors">
+              <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <Link to="/membership" className="bg-gym-yellow text-black px-8 py-3 rounded font-bold hover:bg-yellow-400 hover:scale-105 transform transition-all">
                   JOIN NOW
-                </button>
-                <button className="border border-white text-white px-8 py-3 rounded font-bold hover:border-gym-yellow hover:text-gym-yellow transition-colors">
+                </Link>
+                <Link to="/contact" className="border border-white text-white px-8 py-3 rounded font-bold hover:border-gym-yellow hover:text-gym-yellow hover:scale-105 transform transition-all">
                   CONTACT US
-                </button>
+                </Link>
               </div>
             </div>
           </motion.div>
@@ -158,5 +163,8 @@ const About = () => {
     </div>
   );
 };
+
+// Add React Router import at the top
+import { Link } from 'react-router-dom';
 
 export default About;
