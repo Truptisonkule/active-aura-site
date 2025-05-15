@@ -173,9 +173,11 @@ const Contact = () => {
               <div className="bg-gym-dark rounded-lg p-8 mt-8">
                 <h3 className="text-2xl font-bold mb-6">Find Us</h3>
                 <div className="aspect-[4/3] bg-gray-800 rounded-lg overflow-hidden">
-                  <div className="w-full h-full bg-gray-800 flex items-center justify-center">
-                    <span className="text-gray-500">Map Image</span>
-                  </div>
+                  <img 
+                    src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80" 
+                    alt="Gym Location"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
             </motion.div>

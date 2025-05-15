@@ -21,7 +21,7 @@ const Blog = () => {
       title: 'Mind Over Matter: The Importance of Health in Fitness',
       excerpt: 'Consistency is key when it comes to reaching your fitness goals. Our blog is here to provide you with tips...',
       category: 'wellness',
-      image: '/blog1.jpg',
+      image: 'https://images.unsplash.com/photo-1545389336-cf090694435e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1564&q=80',
       date: 'May 10, 2023',
       author: 'John Smith'
     },
@@ -30,7 +30,7 @@ const Blog = () => {
       title: 'Strategies for Overcoming Fitness Plateaus and Achieving New Goals',
       excerpt: 'Cardio is essential for heart health and burning calories. Explore our blog for exciting cardio workouts that can be done...',
       category: 'fitness',
-      image: '/blog2.jpg',
+      image: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
       date: 'April 25, 2023',
       author: 'Sarah Johnson'
     },
@@ -39,7 +39,7 @@ const Blog = () => {
       title: 'Fuel Your Workout: A Guide to Pre- and Post-Workout Nutrition',
       excerpt: 'Recovery is just as important as your workouts. Dive into our blog to learn about the best practices for muscle...',
       category: 'nutrition',
-      image: '/blog3.jpg',
+      image: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1153&q=80',
       date: 'April 15, 2023',
       author: 'Mike Davis'
     },
@@ -48,7 +48,7 @@ const Blog = () => {
       title: '5 Essential Exercises to Improve Your Core Strength',
       excerpt: 'A strong core is the foundation of overall fitness. Learn the most effective exercises to build a solid core...',
       category: 'fitness',
-      image: '/blog4.jpg',
+      image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
       date: 'March 30, 2023',
       author: 'Emma Wilson'
     },
@@ -57,7 +57,7 @@ const Blog = () => {
       title: 'The Science of Sleep: How Rest Impacts Your Fitness Results',
       excerpt: 'Are you getting enough quality sleep? Discover how sleep affects your recovery, muscle growth, and overall performance...',
       category: 'wellness',
-      image: '/blog5.jpg',
+      image: 'https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80',
       date: 'March 22, 2023',
       author: 'Robert Chen'
     },
@@ -66,7 +66,7 @@ const Blog = () => {
       title: 'Balanced Nutrition: Creating a Sustainable Diet Plan',
       excerpt: 'Forget fad diets - learn how to create a balanced nutrition plan that supports your fitness goals while being sustainable long-term...',
       category: 'nutrition',
-      image: '/blog6.jpg',
+      image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
       date: 'March 15, 2023',
       author: 'Lisa Thompson'
     },
@@ -127,8 +127,12 @@ const Blog = () => {
             className="mb-16"
           >
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 bg-gym-dark p-6 rounded-lg">
-              <div className="aspect-video bg-gray-800 rounded-lg flex items-center justify-center">
-                <span className="text-gray-500">Featured Post Image</span>
+              <div className="aspect-video rounded-lg overflow-hidden">
+                <img 
+                  src={filteredPosts[0]?.image} 
+                  alt={filteredPosts[0]?.title}
+                  className="w-full h-full object-cover" 
+                />
               </div>
               <div className="flex flex-col justify-center">
                 <span className="text-gym-yellow text-sm uppercase tracking-wider mb-2">{filteredPosts[0]?.category.toUpperCase()}</span>
@@ -156,8 +160,12 @@ const Blog = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
                 <div className="bg-gym-dark rounded-lg overflow-hidden h-full flex flex-col">
-                  <div className="aspect-[16/9] bg-gray-800 flex items-center justify-center">
-                    <span className="text-gray-500">Blog Post Image</span>
+                  <div className="aspect-[16/9] overflow-hidden">
+                    <img 
+                      src={post.image} 
+                      alt={post.title}
+                      className="w-full h-full object-cover" 
+                    />
                   </div>
                   <div className="p-6 flex-grow flex flex-col">
                     <span className="text-gym-yellow text-xs uppercase tracking-wider mb-2">{post.category.toUpperCase()}</span>

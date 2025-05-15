@@ -42,10 +42,12 @@ const About = () => {
               transition={{ duration: 0.6 }}
               className="relative"
             >
-              <div className="aspect-[4/3] bg-gray-800 rounded-lg overflow-hidden">
-                <div className="w-full h-full bg-gray-800 flex items-center justify-center">
-                  <span className="text-gray-500">Gym Interior Image</span>
-                </div>
+              <div className="aspect-[4/3] rounded-lg overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" 
+                  alt="Gym Interior" 
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div className="hidden lg:block absolute -bottom-6 -right-6 bg-gym-yellow p-6 rounded-lg">
                 <p className="text-black text-xl font-bold">10+ Years<br />Experience</p>

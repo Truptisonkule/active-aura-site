@@ -15,42 +15,42 @@ const Classes = () => {
     {
       title: "Strength Training",
       description: "Build muscle, increase strength, and improve your overall fitness with our comprehensive strength training classes.",
-      image: "/strength-training.jpg",
+      image: "https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80",
       schedule: "Mon, Wed, Fri - 7:00 AM, 6:00 PM",
       duration: "60 min"
     },
     {
       title: "Cardio HIIT",
       description: "High-intensity interval training designed to burn fat, improve endurance and boost your metabolism.",
-      image: "/cardio-hiit.jpg",
+      image: "https://images.unsplash.com/photo-1540497077202-7c8a3999166f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
       schedule: "Tue, Thu - 8:00 AM, 7:00 PM",
       duration: "45 min"
     },
     {
       title: "Yoga & Flexibility",
       description: "Improve flexibility, balance, and mental wellness with our yoga classes suitable for all levels.",
-      image: "/yoga.jpg",
+      image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1220&q=80",
       schedule: "Mon, Wed, Fri - 9:00 AM, 5:00 PM",
       duration: "60 min"
     },
     {
       title: "CrossFit",
       description: "Challenge yourself with varied functional movements performed at high intensity to build strength and conditioning.",
-      image: "/crossfit.jpg",
+      image: "https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
       schedule: "Tue, Thu, Sat - 6:00 AM, 5:30 PM",
       duration: "60 min"
     },
     {
       title: "Spinning",
       description: "Indoor cycling workouts that combine rhythm and visualization to deliver an effective and fun cardio experience.",
-      image: "/spinning.jpg",
+      image: "https://images.unsplash.com/photo-1591741544554-13df92d3d515?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
       schedule: "Mon, Wed, Fri - 6:00 AM, 6:30 PM",
       duration: "45 min"
     },
     {
       title: "Boxing Fitness",
       description: "Learn boxing techniques while getting a full-body workout that improves coordination and burns calories.",
-      image: "/boxing.jpg",
+      image: "https://images.unsplash.com/photo-1549824506-b7045a1a059f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80",
       schedule: "Tue, Thu - 7:00 PM, Sat - 10:00 AM",
       duration: "60 min"
     }
@@ -99,9 +99,11 @@ const Classes = () => {
                 <Card className="bg-gym-dark border-gray-700 text-white h-full flex flex-col overflow-hidden hover:border-gym-yellow transition-colors duration-300">
                   <div className="relative">
                     <AspectRatio ratio={16/9}>
-                      <div className="w-full h-full bg-gray-800 flex items-center justify-center">
-                        <span className="text-gray-500">Class Image</span>
-                      </div>
+                      <img 
+                        src={classItem.image} 
+                        alt={classItem.title} 
+                        className="w-full h-full object-cover"
+                      />
                     </AspectRatio>
                   </div>
                   <CardContent className="p-6 flex-grow flex flex-col justify-between">

@@ -11,20 +11,80 @@ const Gallery = () => {
   
   const [activeFilter, setActiveFilter] = useState('all');
   
-  // Gallery items with categories
+  // Gallery items with categories and actual images
   const galleryItems = [
-    { id: 1, category: 'gym', title: 'Gym Facilities' },
-    { id: 2, category: 'classes', title: 'Group Classes' },
-    { id: 3, category: 'gym', title: 'Weight Area' },
-    { id: 4, category: 'events', title: 'Fitness Competition' },
-    { id: 5, category: 'classes', title: 'Yoga Session' },
-    { id: 6, category: 'trainers', title: 'Personal Training' },
-    { id: 7, category: 'gym', title: 'Cardio Section' },
-    { id: 8, category: 'events', title: 'Member Meetup' },
-    { id: 9, category: 'trainers', title: 'Coaching Session' },
-    { id: 10, category: 'classes', title: 'HIIT Class' },
-    { id: 11, category: 'gym', title: 'Recovery Area' },
-    { id: 12, category: 'events', title: 'Nutrition Workshop' },
+    { 
+      id: 1, 
+      category: 'gym', 
+      title: 'Gym Facilities',
+      image: 'https://images.unsplash.com/photo-1540497077202-7c8a3999166f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'
+    },
+    { 
+      id: 2, 
+      category: 'classes', 
+      title: 'Group Classes',
+      image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'
+    },
+    { 
+      id: 3, 
+      category: 'gym', 
+      title: 'Weight Area',
+      image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'
+    },
+    { 
+      id: 4, 
+      category: 'events', 
+      title: 'Fitness Competition',
+      image: 'https://images.unsplash.com/photo-1599058917765-a780eda07a3e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80'
+    },
+    { 
+      id: 5, 
+      category: 'classes', 
+      title: 'Yoga Session',
+      image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1220&q=80'
+    },
+    { 
+      id: 6, 
+      category: 'trainers', 
+      title: 'Personal Training',
+      image: 'https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80'
+    },
+    { 
+      id: 7, 
+      category: 'gym', 
+      title: 'Cardio Section',
+      image: 'https://images.unsplash.com/photo-1596357395217-80de13130e92?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80'
+    },
+    { 
+      id: 8, 
+      category: 'events', 
+      title: 'Member Meetup',
+      image: 'https://images.unsplash.com/photo-1470468969717-61d5d54fd036?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1144&q=80'
+    },
+    { 
+      id: 9, 
+      category: 'trainers', 
+      title: 'Coaching Session',
+      image: 'https://images.unsplash.com/photo-1571388208497-71bedc66e932?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80'
+    },
+    { 
+      id: 10, 
+      category: 'classes', 
+      title: 'HIIT Class',
+      image: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'
+    },
+    { 
+      id: 11, 
+      category: 'gym', 
+      title: 'Recovery Area',
+      image: 'https://images.unsplash.com/photo-1574680096145-d05b474e2155?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80'
+    },
+    { 
+      id: 12, 
+      category: 'events', 
+      title: 'Nutrition Workshop',
+      image: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1153&q=80'
+    },
   ];
   
   const filteredItems = activeFilter === 'all' 
@@ -82,8 +142,12 @@ const Gallery = () => {
                 key={item.id}
                 className="overflow-hidden rounded-lg group relative"
               >
-                <div className="aspect-square bg-gray-800 flex items-center justify-center">
-                  <span className="text-gray-500">Gallery Image</span>
+                <div className="aspect-square">
+                  <img 
+                    src={item.image} 
+                    alt={item.title}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
                   <div className="text-center p-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
